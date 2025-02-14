@@ -15,7 +15,7 @@ export const getAlltasks = async (req,res)=>{
 
 export const createTask = async (req, res) => {
 
-  req.body.createdBy = req.user.userId;
+  req.body.createdBy = req.user;
 
   console.log('User ID:', req.body.createdBy); // Log the userId to make sure it's being set properly
   const task = await Task.create(req.body);
