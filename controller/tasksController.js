@@ -9,7 +9,7 @@ import { NotFoundError } from "../errors/customError.js";
 
 export const getAlltasks = async (req,res)=>{
   
-  const tasks = await Task.find({ createdBy: req.user.userId });
+  const tasks = await Task.find({ createdBy: req.user });
     res.status(200).json({tasks});
 };
 
